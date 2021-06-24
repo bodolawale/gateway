@@ -1,7 +1,7 @@
 import {
   LoginPayload,
   LoginResponse,
-} from './../../generated_proto/auth/auth_pb.d';
+} from '../../generated_proto/auth/auth_pb';
 import { Inject, Injectable } from '@nestjs/common';
 import { ClientGrpc } from '@nestjs/microservices';
 
