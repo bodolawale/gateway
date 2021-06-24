@@ -9,6 +9,7 @@
     "prebuild": "rimraf dist",
     "build": "nest build",
     "format": "prettier --write \"src/**/*.ts\" \"test/**/*.ts\"",
+    "gen-proto": "./protoc.sh",
     "start": "nest start",
     "start:dev": "nest start --watch",
     "start:debug": "nest start --debug --watch",
@@ -21,9 +22,14 @@
     "test:e2e": "jest --config ./test/jest-e2e.json"
   },
   "dependencies": {
+    "@grpc/proto-loader": "^0.6.2",
     "@nestjs/common": "^7.6.15",
     "@nestjs/core": "^7.6.15",
+    "@nestjs/microservices": "^7.6.18",
     "@nestjs/platform-express": "^7.6.15",
+    "grpc": "^1.24.10",
+    "grpc-tools": "^1.11.2",
+    "grpc_tools_node_protoc_ts": "^5.3.0",
     "reflect-metadata": "^0.1.13",
     "rimraf": "^3.0.2",
     "rxjs": "^6.6.6"

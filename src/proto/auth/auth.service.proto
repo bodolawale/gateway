@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package auth;
+
+import "auth/auth.proto";
+
+service AuthService {
+  rpc Login(auth.LoginPayload) returns (auth.LoginResponse);
+}
