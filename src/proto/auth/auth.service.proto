@@ -2,8 +2,17 @@ syntax = "proto3";
 
 package auth;
 
-import "auth/auth.proto";
+message LoginPayload {
+  string email = 1;
+  string password = 2;
+}
+
+message LoginResponse {
+  int32 id = 1;
+  string email = 2;
+  string password = 3;
+}
 
 service AuthService {
-  rpc Login(auth.LoginPayload) returns (auth.LoginResponse);
+  rpc Login(LoginPayload) returns (LoginResponse);
 }
