@@ -8,9 +8,14 @@ import { ClientGrpc } from '@nestjs/microservices';
 @Injectable()
 export class AuthService {
   private readonly authSvc;
+  private readonly userSvc;
 
-  constructor(@Inject('AUTH_SVC') private client: ClientGrpc) {
-    this.authSvc = client.getService('AuthService');
+  constructor(
+    @Inject('AUTH_SVC') private authClient: ClientGrpc,
+    @Inject('USER_SVC') private userClient: ClientGrpc,
+  ) {
+    this.authSvc = authClient.getService('AuthService');
+    this.userSvc = userClient.getService('UserService');
   }
 
   async login(data: LoginPayload.AsObject): Promise<LoginResponse.AsObject> {

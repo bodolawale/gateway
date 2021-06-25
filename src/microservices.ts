@@ -11,6 +11,15 @@ const middlewares = ClientsModule.register([
       url: 'localhost:7001',
     },
   },
+  {
+    name: 'USER_SVC',
+    transport: Transport.GRPC,
+    options: {
+      package: 'user',
+      protoPath: join(__dirname, 'proto/user/user.service.proto'),
+      url: 'localhost:7002',
+    },
+  },
 ]);
 
 export default middlewares;
