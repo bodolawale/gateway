@@ -1,7 +1,7 @@
 import {
   LoginPayload,
   LoginResponse,
-} from '../../generated_proto/auth/auth_pb';
+} from '../../generated_proto/auth/auth.service_pb';
 import { AuthService } from './auth.service';
 import { Body, Controller, Inject, Post } from '@nestjs/common';
 

@@ -7,12 +7,20 @@ message CreateUserPayload {
   string password = 2;
 }
 
-message CreateUserResponse {
+message GetOneUserPayload {
+  int32 id = 1;
+}
+
+message User {
   int32 id = 1;
   string email = 2;
   string password = 3;
 }
 
 service UserService {
-  rpc CreateUser(CreateUserPayload) returns (CreateUserResponse);
+  rpc CreateUser(CreateUserPayload) returns (User);
+
+  rpc GetOneUser(GetOneUserPayload) returns (User);
+  
+  rpc GetAllUsers(User) returns (stream User);
 }
