@@ -1,3 +1,4 @@
+import { User } from './../../generated_proto/user/user.service_pb';
 import {
   LoginPayload,
   LoginResponse,
@@ -20,5 +21,13 @@ export class AuthService {
 
   async login(data: LoginPayload.AsObject): Promise<LoginResponse.AsObject> {
     return this.authSvc.login(data);
+  }
+
+  async getOneUser(id: number): Promise<User.AsObject> {
+    return this.userSvc.getOneUser({ id });
+  }
+
+  async getAllUsers(id: number): Promise<{ users: User.AsObject[] }> {
+    return this.userSvc.getAllUsers({ id }).toPromise();
   }
 }
