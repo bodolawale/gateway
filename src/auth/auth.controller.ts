@@ -20,7 +20,7 @@ export class AuthController {
 
   @Get('/:id')
   async getById(@Param('id') id: string): Promise<User.AsObject> {
-    return this.authService.getOneUser(parseInt(id, 20));
+    return this.authService.getOneUser(parseInt(id, 10));
   }
 
   @Get('/')
